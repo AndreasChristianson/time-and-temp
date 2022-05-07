@@ -1,1 +1,3 @@
+Pillow==9.1.0
 requests==2.27.1
+epd-library==0.2.3

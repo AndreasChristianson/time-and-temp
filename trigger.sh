@@ -2,6 +2,7 @@
 
 set -x
 
+cd "$(dirname "$0")"
+
 make pull
-make setup
 make run

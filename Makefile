@@ -1,11 +1,13 @@
 .PHONY: run clean pull
 
 run: venv/bin/activate
-	python3 src/time-and-temp.py
+	python3 src/update_eink.py
+
+dev: venv/bin/activate
+	python3 src/display_image.py
 
 pull:
 	git pull 
-
 
 venv/bin/activate: requirements.txt
 	python3 -m venv venv
