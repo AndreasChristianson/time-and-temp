@@ -1,13 +1,16 @@
 .PHONY: run clean pull
 
-run:
+run: venv/bin/activate
 	python3 src/time-and-temp.py
 
 pull:
 	git pull 
 
-setup: requirements.txt
-	pip3 install -r requirements.txt
+
+venv/bin/activate: requirements.txt
+	python3 -m venv venv
+	./venv/bin/pip3 install -r requirements.txt
 
 clean:
 	rm -rf __pycache__
+	rm -rf venv
