@@ -10,7 +10,7 @@ love = [
             "",
             "Thank you for everything",
             "",
-    ""
+            ""
         ],
         "from":"Joe"
     },
@@ -23,7 +23,7 @@ love = [
         ],
         "from":"Joe"
     },
-        {
+    {
         "lines": [
             "I love you!",
             "",
@@ -39,8 +39,8 @@ love = [
             ""
         ],
         "from":"Andreas"
-    },     
-       {
+    },
+    {
         "lines": [
             "Thank you for taking",
             "care of me when I",
@@ -49,15 +49,145 @@ love = [
         ],
         "from":"Andreas"
     },
+    {
+        "lines": [
+            "Thank you for",
+            "getting me a house",
+            "",
+            ""
+        ],
+        "from":"Joe"
+    },
+    {
+        "lines": [
+            "Thank you for",
+            "buying me pets",
+            "",
+            ""
+        ],
+        "from":"Joe"
+    },
+    {
+        "lines": [
+            "Thank you for",
+            "life",
+            "",
+            ""
+        ],
+        "from":"Joe"
+    },
+    {
+        "lines": [
+            "Thank you for",
+            "buying me food",
+            "",
+            ""
+        ],
+        "from":"Joe"
+    },
+    {
+        "lines": [
+            "Thank you for",
+            "a family",
+            "",
+            ""
+        ],
+        "from":"Joe"
+    },
+    {
+        "lines": [
+            "Thank you for",
+            "help when I need it",
+            "",
+            ""
+        ],
+        "from":"Joe"
+    },
+    {
+        "lines": [
+            "Thank you for",
+            "being my mom",
+            "",
+            ""
+        ],
+        "from":"Joe"
+    },
+    {
+        "lines": [
+            "I love it when you",
+            "read to me at bedtime.",
+            "Thank you!",
+            ""
+        ],
+        "from":"Joe"
+    },
+        {
+        "lines": [
+            "I love how you",
+            "give me hugs",
+            "",
+            ""
+        ],
+        "from":"Joe"
+    },
+            {
+        "lines": [
+            "You are sooo",
+            "beautiful!",
+            "",
+            ""
+        ],
+        "from":"Andreas"
+    },
+                {
+        "lines": [
+            "You are always there",
+            "when I need to talk",
+            "",
+            ""
+        ],
+        "from":"Andreas"
+    },
+                    {
+        "lines": [
+            "I am always happy when",
+            "when you call. I like",
+            "hearing your voice;",
+            "it always has a giggle"
+        ],
+        "from":"Andreas"
+    },
+                        {
+        "lines": [
+            "Thank you for marrying me!",
+            "",
+            "",
+            ""
+        ],
+        "from":"Andreas"
+    },
+                            {
+        "lines": [
+            "I love how you help me",
+            "when I need it, unlike",
+            "dad...",
+            ""
+        ],
+        "from":"Joe"
+    },
 ]
 
 
 def draw_love(draw):
     saying = random.choice(love)
     width = 400-layout.margin*2
-    layout.draw_centered(draw,saying["lines"][0],fonts.sayings,top,layout.margin,width)
-    layout.draw_centered(draw,saying["lines"][1],fonts.sayings,top+24,layout.margin,width)
-    layout.draw_centered(draw,saying["lines"][2],fonts.sayings,top+48,layout.margin,width)
-    layout.draw_centered(draw,saying["lines"][3],fonts.sayings,top+72,layout.margin,width)
-    layout.draw_centered(draw,"--" +saying["from"],fonts.small,top+120,200,100)
-
+    layout.draw_centered(
+        draw, saying["lines"][0], fonts.sayings, top, layout.margin, width)
+    layout.draw_centered(
+        draw, saying["lines"][1], fonts.sayings, top+24, layout.margin, width)
+    layout.draw_centered(
+        draw, saying["lines"][2], fonts.sayings, top+48, layout.margin, width)
+    layout.draw_centered(
+        draw, saying["lines"][3], fonts.sayings, top+72, layout.margin, width)
+    layout.draw_centered(
+        draw, "--" + saying["from"], fonts.sig, top+120, 200, 100)
