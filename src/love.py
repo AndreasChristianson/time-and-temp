@@ -121,7 +121,7 @@ love = [
         ],
         "from":"Joe"
     },
-        {
+    {
         "lines": [
             "I love how you",
             "give me hugs",
@@ -130,7 +130,7 @@ love = [
         ],
         "from":"Joe"
     },
-            {
+    {
         "lines": [
             "You are sooo",
             "beautiful!",
@@ -139,7 +139,7 @@ love = [
         ],
         "from":"Andreas"
     },
-                {
+    {
         "lines": [
             "You are always there",
             "when I need to talk",
@@ -148,7 +148,7 @@ love = [
         ],
         "from":"Andreas"
     },
-                    {
+    {
         "lines": [
             "I am always happy when",
             "when you call. I like",
@@ -157,7 +157,7 @@ love = [
         ],
         "from":"Andreas"
     },
-                        {
+    {
         "lines": [
             "Thank you for marrying me!",
             "",
@@ -166,7 +166,7 @@ love = [
         ],
         "from":"Andreas"
     },
-                            {
+    {
         "lines": [
             "I love how you help me",
             "when I need it, unlike",
@@ -174,6 +174,43 @@ love = [
             ""
         ],
         "from":"Joe"
+    },
+
+    {
+        "lines": [
+            "I like how you help me",
+            "do things that I",
+            "could not do alone",
+            ""
+        ],
+        "from":"Joe"
+    },
+    {
+        "lines": [
+            "I like when you punch me.",
+            "Slug bug!",
+            "",
+            ""
+        ],
+        "from":"Andreas"
+    },
+    {
+        "lines": [
+            "This message good for",
+            "one back rub.",
+            "Take a picture for proof!",
+            ""
+        ],
+        "from":"Andreas"
+    },
+    {
+        "lines": [
+            "Thank you for calling me out",
+            "on my bullshit. I'm not always",
+            "right, I just want to be.",
+            ""
+        ],
+        "from":"Andreas"
     },
 ]
 
