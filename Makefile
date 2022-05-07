@@ -3,7 +3,7 @@
 run: venv/bin/activate
 	python3 src/update_eink.py
 
-dev: venv/bin/activate
+dev:
 	python3 src/display_image.py
 
 pull:
