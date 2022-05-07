@@ -1,12 +1,17 @@
-import requests
-import datetime
-from PIL import Image,ImageDraw,ImageFont
+import grequests
 
-def get_image():
-  image = Image.new( '1', (400, 300), 255)
-  draw = ImageDraw.Draw(image)
+urls = [
+    'https://api.weather.gov/gridpoints/DMX/69,49/forecast',
+    'https://api.weather.gov/stations/KDSM/observations/latest',
+]
 
-  draw_time(draw)
-  draw_weather(draw)
+rs = (grequests.get(u) for u in urls)
 
-  return image
+def draw_weather(draw):
+  forecast,current = get_data()
+  print(forecast)
+
+
+def get_data():
+  rs = (grequests.get(u) for u in urls)
+  return grequests.map(rs)
