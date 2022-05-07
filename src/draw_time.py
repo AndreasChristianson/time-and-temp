@@ -2,7 +2,8 @@ from datetime import datetime
 from PIL import ImageFont
 import os
 import fonts
+import layout
 
 def draw_time(draw):
-  draw.text((10, 0), datetime.now().strftime("%I:%M%PM"), font = fonts.large)
-  draw.text((10, 36), datetime.now().strftime("%a %b %d"), font = fonts.tiny)
+  layout.draw_centered(draw,datetime.now().strftime("%I:%M%PM"),fonts.large,0,layout.margin,layout.top_left_border-layout.margin)
+  layout.draw_centered(draw,datetime.now().strftime("%a %b %d"),fonts.tiny,36,layout.margin,layout.top_left_border-layout.margin)
