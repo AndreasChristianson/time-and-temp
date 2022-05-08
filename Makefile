@@ -3,6 +3,9 @@
 run: venv/bin/activate
 	python3 src/update_eink.py
 
+one_time_message: venv/bin/activate
+	python3 src/one_time_message.py
+
 dev:
 	python3 src/display_image.py
 
