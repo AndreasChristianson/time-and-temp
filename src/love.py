@@ -1,311 +1,41 @@
+from math import ceil
 import random
 import layout
 import fonts
+import csv
 
 top = layout.bottom+layout.margin*2+24
-
-love = [
-    {
-        "lines": [
-            "",
-            "Thank you for everything",
-            "",
-            ""
-        ],
-        "from":"Joe"
-    },
-    {
-        "lines": [
-            "Thank you for",
-            "buying me toys",
-            "",
-            ""
-        ],
-        "from":"Joe"
-    },
-    {
-        "lines": [
-            "",
-            "I love you!",
-            "",
-            ""
-        ],
-        "from":"Joe"
-    },        {
-        "lines": [
-            "",
-            "I love you!",
-            "",
-            ""
-        ],
-        "from":"Andreas"
-    },
-    {
-        "lines": [
-            "Thank you for taking",
-            "care of me when I",
-            "am sick",
-            ""
-        ],
-        "from":"Andreas"
-    },
-    {
-        "lines": [
-            "Thank you for",
-            "getting me a house",
-            "",
-            ""
-        ],
-        "from":"Joe"
-    },
-    {
-        "lines": [
-            "Thank you for",
-            "buying me pets",
-            "",
-            ""
-        ],
-        "from":"Joe"
-    },
-    {
-        "lines": [
-            "Thank you for",
-            "life",
-            "",
-            ""
-        ],
-        "from":"Joe"
-    },
-    {
-        "lines": [
-            "Thank you for",
-            "buying me food",
-            "",
-            ""
-        ],
-        "from":"Joe"
-    },
-    {
-        "lines": [
-            "Thank you for",
-            "a family",
-            "",
-            ""
-        ],
-        "from":"Joe"
-    },
-    {
-        "lines": [
-            "Thank you for",
-            "help when I need it",
-            "",
-            ""
-        ],
-        "from":"Joe"
-    },
-    {
-        "lines": [
-            "Thank you for",
-            "being my mom",
-            "",
-            ""
-        ],
-        "from":"Joe"
-    },
-    {
-        "lines": [
-            "I love it when you",
-            "read to me at bedtime.",
-            "Thank you!",
-            ""
-        ],
-        "from":"Joe"
-    },
-    {
-        "lines": [
-            "I love how you",
-            "give me hugs",
-            "",
-            ""
-        ],
-        "from":"Joe"
-    },
-    {
-        "lines": [
-            "",
-            "You are so beautiful!",
-            "",
-            ""
-        ],
-        "from":"Andreas"
-    },
-    {
-        "lines": [
-            "You are always there",
-            "when I need to talk",
-            "",
-            ""
-        ],
-        "from":"Andreas"
-    },
-    {
-        "lines": [
-            "I am always happy when",
-            "when you call. I like",
-            "hearing your voice;",
-            "it always has a giggle"
-        ],
-        "from":"Andreas"
-    },
-    {
-        "lines": [
-            "Thank you for marrying me!",
-            "",
-            "",
-            ""
-        ],
-        "from":"Andreas"
-    },
-    {
-        "lines": [
-            "I love how you help me",
-            "when I need it, unlike",
-            "dad...",
-            ""
-        ],
-        "from":"Joe"
-    },
-
-    {
-        "lines": [
-            "I like how you help me",
-            "do things that I",
-            "could not do alone",
-            ""
-        ],
-        "from":"Joe"
-    },
-    {
-        "lines": [
-            "I like when you punch me.",
-            "Slug bug!",
-            "",
-            ""
-        ],
-        "from":"Andreas"
-    },
-    {
-        "lines": [
-            "This message good for",
-            "one back rub.",
-            "Take a picture for proof!",
-            ""
-        ],
-        "from":"Andreas"
-    },
-    {
-        "lines": [
-            "Thank you for calling me out",
-            "on my bullshit. I'm not always",
-            "right, I just want to be.",
-            ""
-        ],
-        "from":"Andreas"
-    },
-    {
-        "lines": [
-            "I love mom because she",
-            "always makes me laugh. She",
-            "accidentally does funny things.",
-            ""
-        ],
-        "from":"Joe"
-    },
-    {
-        "lines": [
-            "I love mom because she",
-            "makes really good omelettes.",
-            "I like omelettes. Do you?",
-            ""
-        ],
-        "from":"Joe"
-    },
-    {
-        "lines": [
-            "",
-            "Go get 'em, Tiger!",
-            "",
-            ""
-        ],
-        "from":"Andreas"
-    },
-    {
-        "lines": [
-            "One way that we're special",
-            "is poop. We'll always have",
-            "good poop stories.",
-            "The poop is strong with us!"
-        ],
-        "from":"Andreas"
-    },
-    {
-        "lines": [
-            "Thank you for cleaning up.",
-            "I don't put enough emphasis",
-            "on the work you do around",
-            "the house."
-        ],
-        "from":"Andreas"
-    },
-    {
-        "lines": [
-            "You are so smart and pretty.",
-            "I'm lucky to have you in my",
-            "life.",
-            ""
-        ],
-        "from":"Andreas"
-    },
-    {
-        "lines": [
-            "I like when you rub my neck",
-            "when I'm driving.",
-            "Thank you!",
-            ""
-        ],
-        "from":"Andreas"
-    },
-    {
-        "lines": [
-            "I like hearing you sing",
-            "California Dreaming around",
-            "the house. You brighten my life.",
-            ""
-        ],
-        "from":"Andreas"
-    },
-    {
-        "lines": [
-            "This message good for one hour of",
-            "'yes'. We will answer 'yes' to any",
-            "request for one hour. Redeem by",
-            "showing a picture of this message."
-        ],
-        "from":"J & A"
-    },
-]
-
+with open('love.csv', newline='') as csvfile:
+  reader = csv.reader(csvfile)
+  love = list(reader)
 
 def draw_love(draw):
     saying = random.choice(love)
     width = 400-layout.margin*2
+    first, second, third, fourth = split_phrase(saying[0])
     layout.draw_centered(
-        draw, saying["lines"][0], fonts.sayings, top, layout.margin, width)
+        draw, first, fonts.sayings, top, layout.margin, width)
     layout.draw_centered(
-        draw, saying["lines"][1], fonts.sayings, top+24, layout.margin, width)
+        draw, second, fonts.sayings, top+24, layout.margin, width)
     layout.draw_centered(
-        draw, saying["lines"][2], fonts.sayings, top+48, layout.margin, width)
+        draw, third, fonts.sayings, top+48, layout.margin, width)
     layout.draw_centered(
-        draw, saying["lines"][3], fonts.sayings, top+72, layout.margin, width)
+        draw, fourth, fonts.sayings, top+72, layout.margin, width)
     layout.draw_centered(
-        draw, "--" + saying["from"], fonts.sig, top+120, 200, 100)
+        draw, "--" + saying[1], fonts.sig, top+120, 200, 100)
+
+def split_phrase(phrase):
+  words = phrase.split()
+
+  chunked_list = list()
+  print(words)
+  chunk_size = max(ceil(len(words)/4),5)
+  print(chunk_size)
+
+  for i in range(0, len(words), chunk_size):
+    chunked_list.append(" ".join(words[i:i+chunk_size]))
+  print(chunked_list)
+  chunked_list += [""] * (4 - len(chunked_list))
+  print(chunked_list)
+  
+  return chunked_list
