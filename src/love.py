@@ -25,16 +25,16 @@ love = [
     },
     {
         "lines": [
-            "I love you!",
             "",
+            "I love you!",
             "",
             ""
         ],
         "from":"Joe"
     },        {
         "lines": [
-            "I love you!",
             "",
+            "I love you!",
             "",
             ""
         ],
@@ -132,8 +132,8 @@ love = [
     },
     {
         "lines": [
-            "You are sooo",
-            "beautiful!",
+            "",
+            "You are so beautiful!",
             "",
             ""
         ],
@@ -211,6 +211,87 @@ love = [
             ""
         ],
         "from":"Andreas"
+    },
+    {
+        "lines": [
+            "I love mom because she",
+            "always makes me laugh. She",
+            "accidentally does funny things.",
+            ""
+        ],
+        "from":"Joe"
+    },
+    {
+        "lines": [
+            "I love mom because she",
+            "makes really good omelettes.",
+            "I like omelettes. Do you?",
+            ""
+        ],
+        "from":"Joe"
+    },
+    {
+        "lines": [
+            "",
+            "Go get 'em, Tiger!",
+            "",
+            ""
+        ],
+        "from":"Andreas"
+    },
+    {
+        "lines": [
+            "One way that we're special",
+            "is poop. We'll always have",
+            "good poop stories.",
+            "The poop is strong with us!"
+        ],
+        "from":"Andreas"
+    },
+    {
+        "lines": [
+            "Thank you for cleaning up.",
+            "I don't put enough emphasis",
+            "on the work you do around",
+            "the house."
+        ],
+        "from":"Andreas"
+    },
+    {
+        "lines": [
+            "You are so smart and pretty.",
+            "I'm lucky to have you in my",
+            "life.",
+            ""
+        ],
+        "from":"Andreas"
+    },
+    {
+        "lines": [
+            "I like when you rub my neck",
+            "when I'm driving.",
+            "Thank you!",
+            ""
+        ],
+        "from":"Andreas"
+    },
+    {
+        "lines": [
+            "I like hearing you sing",
+            "California Dreaming around",
+            "the house. You brighten my life.",
+            ""
+        ],
+        "from":"Andreas"
+    },
+    {
+        "lines": [
+            "This message good for one hour of",
+            "'yes'. We will answer 'yes' to any",
+            "request for one hour. Redeem by",
+            "showing a picture of this message."
+        ],
+        "from":"J & A"
     },
 ]
 
