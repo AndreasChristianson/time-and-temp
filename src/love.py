@@ -28,14 +28,10 @@ def split_phrase(phrase):
   words = phrase.split()
 
   chunked_list = list()
-  print(words)
   chunk_size = max(ceil(len(words)/4),5)
-  print(chunk_size)
 
   for i in range(0, len(words), chunk_size):
     chunked_list.append(" ".join(words[i:i+chunk_size]))
-  print(chunked_list)
   chunked_list += [""] * (4 - len(chunked_list))
-  print(chunked_list)
   
   return chunked_list
