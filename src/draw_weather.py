@@ -25,13 +25,11 @@ def get_data():
 
 
 def print_forecast(forecast, draw):
-    print(forecast)
-    if hasattr(forecast, 'properties'):
-        print_period(forecast["properties"]["periods"][0], draw, 0)
-        print_period(forecast["properties"]["periods"]
-                     [1], draw, 18+12+layout.margin)
-        print_period(forecast["properties"]["periods"]
-                     [2], draw, (18+12+layout.margin)*2)
+    print_period(forecast["properties"]["periods"][0], draw, 0)
+    print_period(forecast["properties"]["periods"]
+                 [1], draw, 18+12+layout.margin)
+    print_period(forecast["properties"]["periods"]
+                 [2], draw, (18+12+layout.margin)*2)
 
 
 def print_period(period, draw, top):
@@ -44,7 +42,7 @@ def print_period(period, draw, top):
 def print_current(current, draw):
     temp = current["properties"]["temperature"]["value"]
     layout.draw_centered(draw, str(round(c_to_f(temp), 1))+"°F", fonts.large,
-                             36+12+layout.margin, layout.margin, layout.top_left_border-layout.margin)
+                         36+12+layout.margin, layout.margin, layout.top_left_border-layout.margin)
     textDescription = current["properties"]["textDescription"]
     layout.draw_centered(draw, textDescription, fonts.tiny, 36+12 +
                          layout.margin+36, layout.margin, layout.top_left_border-layout.margin)
