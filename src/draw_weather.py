@@ -25,6 +25,7 @@ def get_data():
 
 
 def print_forecast(forecast, draw):
+    print(forecast)
     if hasattr(forecast, 'properties'):
         print_period(forecast["properties"]["periods"][0], draw, 0)
         print_period(forecast["properties"]["periods"]
