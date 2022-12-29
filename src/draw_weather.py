@@ -39,9 +39,11 @@ def print_period(period, draw, top):
 
 
 def print_current(current, draw):
-    temp = current["properties"]["temperature"]["value"]
+    print(current)
+    if hasattr(current["properties"]["temperature"], "value"):
+        temp = current["properties"]["temperature"]["value"]
+        layout.draw_centered(draw,str(round(c_to_f(temp), 1))+"°F",fonts.large,36+12+layout.margin,layout.margin,layout.top_left_border-layout.margin)
     textDescription = current["properties"]["textDescription"]
-    layout.draw_centered(draw,str(round(c_to_f(temp), 1))+"°F",fonts.large,36+12+layout.margin,layout.margin,layout.top_left_border-layout.margin)
     layout.draw_centered(draw,textDescription,fonts.tiny,36+12+layout.margin+36,layout.margin,layout.top_left_border-layout.margin)
 
 
